@@ -2,11 +2,12 @@ import requests
 import json
 
 
-def create_user(username: str, ipaddress: str, port: str):
+def create_user(username: str, ipaddress: str, port: str, hostingmode: str):
     newuserdata = {
         'username': '\'' + username + '\'',
         'ipAddress': '\'' + ipaddress + '\'',
-        'port': '\'' + port + '\''
+        'port': '\'' + port + '\'',
+        'mode': '\'' + hostingmode + '\''
     }
 
     r = requests.post(url='https://127.0.0.10:5000/user', params=newuserdata)
@@ -19,6 +20,7 @@ def create_user(username: str, ipaddress: str, port: str):
     else:
         with open('./friends/' + username + '.json', 'w') as newuserfile:
             json.dump(jsondata, newuserfile)
+
 
 def update_user_info(username:str, mostplayedgame: str, mostplayedsystem:str):
     updatedata = {
