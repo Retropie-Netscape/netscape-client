@@ -39,7 +39,7 @@ def get_connection_details():
             elif line.__contains__('__mode='):
                 hostingmode = line.replace("__mode=", "")
 
-    if username.__str__() == 'RetroPie':
+    if username.__str__() == '"RetroPie"':
         username = input(__prompt='Please enter a nickname that you would like for your account:\n')
         UpdateServerUserInfo.create_user(username, ip.__str__(), port.__str__(), hostingmode.__str__())
     else:
