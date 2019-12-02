@@ -2,7 +2,12 @@ import json
 import GetUserInfo
 import UpdateServerUserInfo
 
-def write_connection_details(username: str):
+
+def write_connection_details():
+    username = None
+    with open('/opt/retropie/configs/all/retronetplay.cfg', 'w+') as netplayconfigfile:
+        username = netplayconfigfile.read(4)
+
     jsondata = GetUserInfo.get_connection_details(username)
 
     if jsondata is None:

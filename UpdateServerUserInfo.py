@@ -10,7 +10,7 @@ def create_user(username: str, ipaddress: str, port: str, hostingmode: str):
         'mode': '\'' + hostingmode + '\''
     }
 
-    r = requests.post(url='https://127.0.0.10:5000/user', params=newuserdata)
+    r = requests.post(url='https://raspinetscape.hopto.org:5000/user', params=newuserdata)
     jsondata = r.json()
 
     if jsondata['serverCode'] == 400:
@@ -29,7 +29,7 @@ def update_user_info(username:str, mostplayedgame: str, mostplayedsystem:str):
         'mostPlayedSystem': '\'' + mostplayedsystem + '\''
     }
 
-    r = requests.put(url='https://127.0.0.10:5000/user/leaderboard-details', params=updatedata)
+    r = requests.put(url='https://raspinetscape.hopto.org:5000/user/leaderboard-details', params=updatedata)
     jsondata = r.json()
 
     if jsondata['serverCode'] == 400:
