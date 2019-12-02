@@ -11,7 +11,7 @@ def write_connection_details():
     jsondata = GetUserInfo.get_connection_details(username)
 
     if jsondata is None:
-        return None
+        return 1
 
     else:
         with open('/opt/retropie/configs/all/retronetplay.cfg', 'w+') as netplayconfigfile:

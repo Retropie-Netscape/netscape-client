@@ -22,7 +22,7 @@ def create_user(username: str, ipaddress: str, port: str, hostingmode: str):
             json.dump(jsondata, newuserfile)
 
 
-def update_user_info(username:str, mostplayedgame: str, mostplayedsystem:str):
+def update_user_info(username: str, mostplayedgame: str, mostplayedsystem: str):
     updatedata = {
         'username': '\'' + username + '\'',
         'mostPlayedGame': '\'' + mostplayedgame + '\'',
