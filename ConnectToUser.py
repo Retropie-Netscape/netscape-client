@@ -40,7 +40,8 @@ def get_connection_details():
                 hostingmode = line.replace("__mode=", "")
 
     if username.__str__().__contains__('"RetroPie"'):
-        username = input('Please enter a nickname that you would like for your account:\n--> ')
+        print('Please enter a nickname that you would like for your account:\n')
+        username = input()
         UpdateServerUserInfo.create_user(username, ip.__str__(), port.__str__(), hostingmode.__str__())
     else:
         UpdateServerUserInfo.create_user(username.__str__(), ip.__str__(), port.__str__(), hostingmode.__str__())
