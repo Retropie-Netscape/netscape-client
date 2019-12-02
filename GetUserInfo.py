@@ -3,7 +3,7 @@ import json
 import sqlite3
 
 
-url = 'https://raspinetscape.hopto.org:5000/user'
+url = 'https://10.0.0.119:5000/user'
 
 
 def get_connection_details(username: str):
