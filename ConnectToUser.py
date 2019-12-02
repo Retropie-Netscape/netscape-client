@@ -31,13 +31,13 @@ def get_connection_details():
     with open('/opt/retropie/configs/all/retronetplay.cfg', 'r') as netplayconfigfile:
         for line in netplayconfigfile:
             if line.__contains__('__netplayport='):
-                port = line.index(line, 13, line.__sizeof__()-1)
+                port = line.replace("__netplayport=", "")
             elif line.__contains__('__netplayhostip='):
-                ip = line.index(line, 15, line.__sizeof__()-1)
+                ip = line.replace("__netplayhostip=", "")
             elif line.__contains__('__nickname='):
-                username = line.index(line, 10, line.__sizeof__()-1)
+                username = line.replace('__nickname=', "")
             elif line.__contains__('__mode='):
-                hostingmode = line.index(line, 6, line.__sizeof__()-1)
+                hostingmode = line.replace("__mode=", "")
 
     if username.__str__() == 'RetroPie':
         username = input(__prompt='Please enter a nickname that you would like for your account:\n')
