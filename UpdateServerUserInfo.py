@@ -18,7 +18,7 @@ def create_user(username: str, ipaddress: str, port: str, hostingmode: str):
         return None
 
     else:
-        with open('./friends/' + username + '.json', 'w') as newuserfile:
+        with open('friends/' + username + '.json', 'w') as newuserfile:
             json.dump(jsondata, newuserfile)
 
 

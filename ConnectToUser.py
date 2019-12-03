@@ -42,6 +42,13 @@ def get_connection_details():
     if username.__str__().__contains__('"RetroPie"'):
         print('Please enter a nickname that you would like for your account:\n')
         username = input()
+        with open('/opt/retropie/configs/all/retronetplay.cfg', 'a+') as netplayconfigfile:
+            i = 0
+            for line in netplayconfigfile.readlines():
+                i += 1
+                if line.__contains__('__nickname'):
+                    netplayconfigfile.truncate(i)
+                    netplayconfigfile.write('__nickname="' + username + '"')
         UpdateServerUserInfo.create_user(username, ip.__str__(), port.__str__(), hostingmode.__str__())
     else:
         UpdateServerUserInfo.create_user(username.__str__(), ip.__str__(), port.__str__(), hostingmode.__str__())
