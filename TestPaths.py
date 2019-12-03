@@ -1,4 +1,5 @@
 import ConnectToUser
+import PushUserData
 
 
 def test_write_connection_details():
@@ -6,9 +7,9 @@ def test_write_connection_details():
 
 
 def test_update_user():
-    ConnectToUser.push_user_data()
+    PushUserData.push_user_data()
 
 
 if __name__ == "__main__":
-    #test_update_user()
+    test_update_user()
     test_write_connection_details()
