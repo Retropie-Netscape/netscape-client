@@ -3,10 +3,7 @@ import GetUserInfo
 import UpdateServerUserInfo
 
 
-def write_connection_details():
-    username = None
-    with open('/opt/retropie/configs/all/retronetplay.cfg', 'w+') as netplayconfigfile:
-        username = netplayconfigfile.read(4)
+def write_connection_details(username: str):
 
     jsondata = GetUserInfo.get_connection_details(username)
 
@@ -23,7 +20,8 @@ def write_connection_details():
 
     return 0
 
-def get_connection_details():
+
+def push_user_data():
     port = None
     ip = None
     username = None
