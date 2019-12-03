@@ -11,7 +11,7 @@ def get_connection_details(username: str):
         "username": '\'' + username + '\''
     }
 
-    r = requests.get(url, params=data)
+    r = requests.get(url, params=data, verify=False)
     jsondata = r.json()
 
     if jsondata['serverCode'] == 400:
@@ -29,7 +29,7 @@ def get_user_details(username: str):
         'username': '\'' + username + '\''
     }
 
-    r = requests.get(url=url, params=data)
+    r = requests.get(url=url, params=data, verify=False)
     jsondata = r.json()
 
     if jsondata['serverCode'] == 400:
