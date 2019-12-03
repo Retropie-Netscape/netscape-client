@@ -17,7 +17,7 @@ def push_user_data():
             elif line.__contains__('__mode='):
                 hostingmode = line.replace("__mode=", "")
 
-    if username.__str__().__contains__('"RetroPie"'):
+    if username.__contains__('"RetroPie"'):
         print('Please enter a nickname that you would like for your account:\n')
         username = input()
         with open('/opt/retropie/configs/all/retronetplay.cfg', 'a+') as netplayconfigfile:
