@@ -46,7 +46,7 @@ def update_user_info(username: str, ipaddress: str, port: str, hostmode: str):
         return 0
 
 
-def update_leaderboard_info(username: str, mostplayedgame: str, mostplayedsystem: str)
+def update_leaderboard_info(username: str, mostplayedgame: str, mostplayedsystem: str):
     updatedata = {
         'username': '\'' + username + '\'',
         'mostPlayedGame': '\'' + mostplayedgame + '\'',
