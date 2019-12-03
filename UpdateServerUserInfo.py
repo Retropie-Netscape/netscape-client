@@ -10,7 +10,7 @@ def create_user(username: str, ipaddress: str, port: str, hostingmode: str):
         'mode': '\'' + hostingmode + '\''
     }
 
-    r = requests.post(url='https://10.0.0.119:5000/user', params=newuserdata)
+    r = requests.post(url='https://10.0.0.119:5000/user', json=newuserdata, verify=False)
     jsondata = r.json()
 
     if jsondata['serverCode'] == 400:
@@ -29,7 +29,7 @@ def update_user_info(username: str, mostplayedgame: str, mostplayedsystem: str):
         'mostPlayedSystem': '\'' + mostplayedsystem + '\''
     }
 
-    r = requests.put(url='https://10.0.0.119:5000/user/leaderboard-details', params=updatedata)
+    r = requests.put(url='https://10.0.0.119:5000/user/leaderboard-details', json=updatedata, verify=False)
     jsondata = r.json()
 
     if jsondata['serverCode'] == 400:
