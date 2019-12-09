@@ -9,13 +9,17 @@ def push_user_data():
     with open('/opt/retropie/configs/all/retronetplay.cfg', 'r') as netplayconfigfile:
         for line in netplayconfigfile:
             if line.__contains__('__netplayport='):
-                port = line.replace("__netplayport=", "")
+                port = line.__str__()
+                port.replace("__netplayport=", "")
             elif line.__contains__('__netplayhostip='):
-                ip = line.replace("__netplayhostip=", "")
-            elif line.__contains__('__nickname='):
-                username = line.replace('__nickname=', "")
+                ip = line.__str__()
+                ip.replace("__netplayhostip=", "")
+            elif line.__contains__('__netplaynickname='):
+                username = line.__str__()
+                username.replace('__netplaynickname=', "")
             elif line.__contains__('__mode='):
-                hostingmode = line.replace("__mode=", "")
+                hostingmode = line.__str__()
+                hostingmode.replace("__netplaymode=", "")
 
     if username.__contains__('"RetroPie"'):
         print('Please enter a nickname that you would like for your account:\n')
